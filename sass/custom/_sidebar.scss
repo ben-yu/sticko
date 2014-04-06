@@ -13,19 +13,23 @@
 	a {text-decoration:none}
 	
 	/* Orange tinted cover over the featured image */
-	&:before {background-color:rgba(221, 75, 56, .75); content:""; display:block; position: absolute; top: 0; bottom: 0; left: 0; right: 0;}
+	&:before {background-color:rgba(44, 62, 80,0.75); content:""; display:block; position: absolute; top: 0; bottom: 0; left: 0; right: 0;}
 }
 
 .sidebar-data-holder {position:relative; width:100%; height:100%; float:left}
 .main-nav {
 	position:absolute; width:15.75em; height:100%; background:$background-darkgrey; right:100%; z-index:100; text-align:left;
 
-	a {
+	#sidebar-link {
     	display:block; width:100%; line-height:3.75rem; border:none; padding-left:1em; color:$text-color-bright; text-transform:uppercase; font-family:$font-family-bold;font-size: 13px;
 
     	@include single-box-shadow(lighten($background-darkgrey, 30%), 0, 1px, 4px, -2px, inset);
 
-    	&:hover {background:$background-orange; padding-left:1.2em}
+    	&:hover {background:$background-midblue; padding-left:1.2em}
+    }
+
+    div {
+    	display:block; bottom:0; width:100%; border:none; padding-left:1em; color:$text-color-bright;
     }
 }
 	.nav-control {
@@ -35,7 +39,7 @@
 	}
 
 .logo {
-	font:4.375em 'Grand Hotel', sans-serif; margin:15% 0 5%;
+	font:4.375em 'Play', sans-serif; margin:50% 0 5%;
 	a {color:$text-color-bright; border:none}
 }
 
@@ -52,7 +56,7 @@
 .social-media-share {
 	margin-top:6%;
 	a {
-		color:$text-color-main; font-size:2.25em;
+		color:$text-color-lightgrey; font-size:2.25em;
 
 		&:hover {color:$text-color-bright}
 	}
