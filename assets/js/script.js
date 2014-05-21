@@ -37,6 +37,15 @@ $(window).load(function(){
 
 });
 
+window.requestAnimFrame = (function(){
+  return  window.requestAnimationFrame       ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame    ||
+          function( callback ){
+            window.setTimeout(callback, 1000 / 60);
+          };
+})();
+
 function hslToRgb(h, s, l){
     var r, g, b;
 
@@ -72,10 +81,10 @@ function dragonCurveIter(seq,iterations) {
 }
 
 function drawDragon(seq,startDir) {
-    var context = $('#matrix')[0].getContext('2d');
-    var x = Math.floor($('#matrix')[0].width/2);
-    var y = Math.floor($('#matrix')[0].height/2);
-    var aspectRatio =  $('#matrix')[0].width/ $('#matrix')[0].height
+    var context = $('#sidecanvas')[0].getContext('2d');
+    var x = Math.floor($('#sidecanvas')[0].width/2);
+    var y = Math.floor($('#sidecanvas')[0].height/2);
+    var aspectRatio =  $('#sidecanvas')[0].width/ $('#sidecanvas')[0].height
     var directions = [{x:0,y:1},{x:aspectRatio,y:0},{x:0,y:-1},{x:-aspectRatio,y:0}]
     var iter = 0;
     var dir = startDir;
@@ -103,18 +112,21 @@ function drawDragon(seq,startDir) {
             iter += 1;
         }
     }
-    setInterval(draw, 10);
+    function animloop(){
+        requestAnimFrame(animloop);
+        draw();
+    }
+    animloop();
 }
 
-
 function matrixAnimation() {
-    var width = $('#matrix')[0].width;
-    var height = $('#matrix')[0].height;
+    var width = $('#sidecanvas')[0].width;
+    var height = $('#sidecanvas')[0].height;
     var letters = [];
     for (var i = 0, l = 20; i < l; i++) {
         letters.push(Math.round(Math.random() * height/5))
     }
-    var context = $('#matrix')[0].getContext('2d');
+    var context = $('#sidecanvas')[0].getContext('2d');
     context.font="10px Play";
 
     var draw = function () {
@@ -128,5 +140,9 @@ function matrixAnimation() {
             letters[index] = (y_pos > height + Math.random() * 1e4) ? 0 : y_pos + 2;
         });
     };
-    setInterval(draw, 33);
+    function animloop(){
+        requestAnimFrame(animloop);
+        draw();
+    }
+    animloop();
 }
