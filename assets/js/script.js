@@ -24,9 +24,10 @@ $(document).ready(function(){
         mainImage.remove();
     }
 
-    //matrixAnimation();
-    drawDragon(dragonCurveIter([1],15),0);
-    drawDragon(dragonCurveIter([1],15),2);
+    animation = $('script[id="animation"]');
+    if (animation.length == 0){
+        matrixAnimation();
+    }
 	
 });
 
