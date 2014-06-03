@@ -50,5 +50,14 @@
 {{#if post}}
     <script async type="text/javascript" src="//apis.google.com/js/plusone.js?callback=gpcb"></script>
 {{/if}}
+{{! Mathjax configuration}}
+<script type="text/javascript"     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script type="text/x-mathjax-config">  
+MathJax.Hub.Config({  
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>  
 </body>
 </html>
