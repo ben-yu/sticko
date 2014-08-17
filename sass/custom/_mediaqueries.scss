@@ -53,7 +53,7 @@ $bp-small-phones-p: 410px;
 /* ==================================================================================================================== */
 
 @media screen and (max-width: bp-calculation($bp-tablets, "down")) {
-	.logo {font-size:3.75em; margin-top:6%}
+	.logo {font-size:2.75em; margin-top:6%}
 	.author-bio {font-size:90%}
 	#main {padding:0 1.75em 1.75em}
 
