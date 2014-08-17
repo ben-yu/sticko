@@ -76,7 +76,7 @@ function dragonCurveIter(seq,iterations) {
     for(var i = 0; i < iterations; i++) {
         var a = seq.reverse().map(function(x){return Number(!x)})
         seq.reverse().push(1);
-        seq.push.apply(seq,a)
+        seq = seq.concat(a);
     }
     return seq
 }
