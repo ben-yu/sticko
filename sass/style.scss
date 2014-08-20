@@ -115,6 +115,18 @@ Author URL: http://damianmuti.com
   width: 100%;
 }
 
+.GITheWall img {
+  padding: 0.1em;
+  background: none;
+  border: none;
+}
+
+.GITheWall .img-preview {
+  width: 200px;
+  height: 200px;
+  box-shadow: 5px 5px 5px #888888;
+}
+
 .GITheWall ul li {
   display: inline-block;
   margin: 10px 5px 0 5px;
@@ -236,6 +248,7 @@ Author URL: http://damianmuti.com
   animation: loader 0.5s infinite ease-in-out both;
 }
 
+
 @-moz-keyframes loader {
   0% {
     background: #ddd;
@@ -314,4 +327,7 @@ Author URL: http://damianmuti.com
     background: #ccc;
     box-shadow: 0 0 1px #cccccc, 15px 30px 1px #dddddd, -15px 30px 1px #cccccc;
   }
+}
+.GI_TW_expander-inner a {
+  color: #FFFFFF !important;
 }
